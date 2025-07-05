@@ -13,9 +13,9 @@ const Cta = () => {
           Get started today and see the difference.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-6">Try For Free</Button>
+          <Button size="lg" className="text-lg px-8 py-6 animate-subtle-pulse">Try For Free</Button>
           <DemoScheduler>
-            <Button size="lg" className="text-lg px-8 py-6">
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
                 Request a Demo
             </Button>
           </DemoScheduler>

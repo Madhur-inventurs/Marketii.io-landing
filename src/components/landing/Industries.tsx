@@ -25,11 +25,11 @@ const Industries = () => {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
           {industries.map((industry) => (
-            <div key={industry.name} className="flex flex-col items-center text-center space-y-3">
-              <div className="bg-white p-6 rounded-full shadow-md border">
+            <div key={industry.name} className="flex flex-col items-center text-center space-y-3 group">
+              <div className="bg-white p-6 rounded-full shadow-md border group-hover:bg-primary/10 group-hover:scale-110 transition-all duration-300">
                 {industry.icon}
               </div>
-              <p className="font-semibold">{industry.name}</p>
+              <p className="font-semibold group-hover:text-primary transition-colors">{industry.name}</p>
             </div>
           ))}
         </div>

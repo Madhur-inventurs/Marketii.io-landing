@@ -19,7 +19,7 @@ const CoreModules = () => {
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         {modules.map((module, index) => (
-                            <Card key={index} className="bg-secondary/50 border-none shadow-sm hover:shadow-lg transition-shadow">
+                            <Card key={index} className="bg-secondary/50 border-none shadow-sm hover:shadow-lg transition-all duration-300 hover:bg-secondary hover:-translate-y-1">
                                 <CardContent className="p-6 flex items-center">
                                     <CheckCircle2 className="h-6 w-6 text-primary mr-4 flex-shrink-0" />
                                     <p className="font-semibold">{module}</p>
@@ -33,7 +33,7 @@ const CoreModules = () => {
                             alt="Dashboard screenshot showing core modules"
                             width={600}
                             height={400}
-                            className="rounded-lg shadow-2xl"
+                            className="rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-500"
                             data-ai-hint="dashboard screen"
                         />
                     </div>

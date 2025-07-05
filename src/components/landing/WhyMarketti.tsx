@@ -34,8 +34,10 @@ const WhyMarketti = () => {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {reasons.map((reason) => (
-            <Card key={reason.title} className="text-center p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+          {reasons.map((reason, i) => (
+            <Card key={reason.title} 
+                  className="text-center p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-transparent hover:border-primary animate-fade-in-up"
+                  style={{ animationDelay: `${i * 100}ms` }}>
               <CardHeader className="items-center">
                  <div className="bg-primary/10 p-4 rounded-full mb-4">
                     {reason.icon}
