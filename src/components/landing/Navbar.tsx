@@ -1,5 +1,7 @@
 import { ChevronDown, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Marketti from '../../assets/Marketti.png';
+import Image from 'next/image';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -37,7 +39,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <a href="#home" className="text-xl font-bold text-primary">Marketti.io</a>
+        <a href="#home" className="text-xl font-bold text-primary"><Image src={Marketti} width={150} height={150} alt='Logo'/></a>
         
         <nav className="hidden md:flex items-center space-x-6">
           {navLinksContent}

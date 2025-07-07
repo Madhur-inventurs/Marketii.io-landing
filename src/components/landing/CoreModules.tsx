@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import CoreModule from "../../assets/Core-module.png";
 
 const CoreModules = () => {
     const modules = [
@@ -29,7 +30,7 @@ const CoreModules = () => {
                     </div>
                     <div>
                         <Image 
-                            src="https://placehold.co/600x400.png"
+                            src={CoreModule}
                             alt="Dashboard screenshot showing core modules"
                             width={600}
                             height={400}
