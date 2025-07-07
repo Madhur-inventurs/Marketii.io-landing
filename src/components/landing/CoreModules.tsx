@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
-import CoreModule from "../../assets/Core-module.png";
+import CoreModule from "../../assets/Marketti-module.jpg";
 
 const CoreModules = () => {
     const modules = [

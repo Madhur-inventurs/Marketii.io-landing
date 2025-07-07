@@ -22,7 +22,7 @@ export default function Home() {
         <TrustedLogos />
         <WhyMarketti />
         <CoreModules />
-        <DigitalMarketing />
+        {/* <DigitalMarketing /> */}
         <AiAutomation />
         <Industries />
         <MobileFirst />

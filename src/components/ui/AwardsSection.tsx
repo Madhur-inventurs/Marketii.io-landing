@@ -1,52 +1,44 @@
-import Image from 'next/image';
-import Sushain from '../../assets/sushain.png';
-import Enwrape from '../../assets/enwrape.png';
-import Apptech from '../../assets/apptech.png';
-
+import Image from "next/image";
+import Sushain from "../../assets/sushain.png";
+import Enwrape from "../../assets/enwrape.png";
+import Apptech from "../../assets/apptech.png";
 
 const AwardsSection = () => {
   return (
-    <div className="mt-8 flex flex-wrap justify-center gap-6 px-4 mb-8">
-      {/* Award 1 */}
-      <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 py-4 flex justify-center items-center max-w-xs w-full shadow-md hover:shadow-lg transition-shadow duration-300">
-        <Image
-          src={Sushain} // Replace with your actual image path
-          alt="Sushain Award"
-          width={120}
-          height={100}
-          className="mr-4"
-        />
-        {/* <div className="text-center text-xl font-semibold text-muted-foreground ">
-          Deloitte<br />Technology Fast<br />50 India – Winner
-        </div> */}
-      </div>
+    <div className="mt-8 mb-8 px-4">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 max-w-4xl mx-auto">
+        {/* Award 1 */}
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg sm:rounded-xl px-2 sm:px-4 md:px-6 sm:py-4 flex justify-center items-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white/15">
+          <Image
+            src={Sushain}
+            alt="Sushain Award"
+            width={120}
+            height={100}
+            className="w-16 h-auto sm:w-20 md:w-24 lg:w-28 object-contain"
+          />
+        </div>
 
-      {/* Award 2 */}
-      <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 py-4 flex justify-center items-center max-w-xs w-full shadow-md hover:shadow-lg transition-shadow duration-300">
-        <Image
-          src={Enwrape} // Replace with your actual image path
-          alt="Enwrape Award"
-          width={120}
-          height={100}
-          className="mr-4"
-        />
-        {/* <div className="text-center text-xl font-semibold text-muted-foreground ">
-          ET Rise<br />Top MSMEs<br />Ranking India’s Best
-        </div> */}
-      </div>
+        {/* Award 2 */}
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg sm:rounded-xl px-2 sm:px-4 md:px-6 sm:py-4 flex justify-center items-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white/15">
+          <Image
+            src={Enwrape}
+            alt="Enwrape Award"
+            width={120}
+            height={100}
+            className="w-16 h-auto sm:w-20 md:w-24 lg:w-28 object-contain"
+          />
+        </div>
 
-      {/* Award 3 */}
-      <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 py-4 flex justify-center items-center max-w-xs w-full shadow-md hover:shadow-lg transition-shadow duration-300">
-        <Image
-          src={Apptech} // Replace with your actual image path
-          alt="Apptech 50 Award"
-          width={120}
-          height={100}
-          className="mr-4"
-        />
-        {/* <div className="text-center text-xl font-semibold text-muted-foreground ">
-          Startup 50<br />Top Enterprise<br />Venture by SmartCEO
-        </div> */}
+        {/* Award 3 */}
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg sm:rounded-xl px-2 sm:px-4 md:px-6 sm:py-4 flex justify-center items-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white/15">
+          <Image
+            src={Apptech}
+            alt="Apptech 50 Award"
+            width={120}
+            height={100}
+            className="w-16 h-auto sm:w-20 md:w-24 lg:w-28 object-contain"
+          />
+        </div>
       </div>
     </div>
   );
