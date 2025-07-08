@@ -5,6 +5,16 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
+import { Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+  SelectScrollUpButton,
+  SelectScrollDownButton, } from "@/components/ui/select";
 import {
   Form,
   FormControl,
@@ -19,10 +29,14 @@ import { useToast } from "@/hooks/use-toast";
 // ✅ Schema updated (removed service and description)
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  mobile: z.string().regex(/^\d{10}$/, { message: "Please enter a valid 10-digit mobile number." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
+  mobile: z.object({
+    code: z.string(),
+    number: z.string().regex(/^\d{10}$/, { message: "Enter a valid 10-digit mobile number." }),
+  }),
+  email: z.string().email({ message: "Enter a valid email address." }),
   organization: z.string().min(2, { message: "Organization name must be at least 2 characters." }),
 });
+
 
 export default function EnquiryForm() {
   const { toast } = useToast();
@@ -30,11 +44,14 @@ export default function EnquiryForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      mobile: "",
-      email: "",
-      organization: "",
-    },
+  name: "",
+  mobile: {
+    code: "in",
+    number: "",
+  },
+  email: "",
+  organization: "",
+},
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -70,18 +87,40 @@ export default function EnquiryForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
-            control={form.control}
-            name="mobile"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Mobile Number</FormLabel>
-                <FormControl>
-                  <Input placeholder="10-digit mobile number" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+  control={form.control}
+  name="mobile"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Mobile Number</FormLabel>
+      <FormControl>
+        <div className="flex space-x-2">
+          <Select
+            value={field.value?.code}
+            onValueChange={(value) => field.onChange({ ...field.value, code: value })}
+          >
+            <SelectTrigger className="w-20">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="ae">🇦🇪 +971</SelectItem>
+              <SelectItem value="in">🇮🇳 +91</SelectItem>
+              <SelectItem value="us">🇺🇸 +1</SelectItem>
+              <SelectItem value="ca">🇨🇦 +1</SelectItem>
+            </SelectContent>
+          </Select>
+          <Input
+            placeholder="10-digit mobile number"
+            value={field.value?.number || ""}
+            onChange={(e) => field.onChange({ ...field.value, number: e.target.value })}
+            className="flex-1 transition-all duration-300 focus:scale-105"
           />
+        </div>
+      </FormControl>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+
           <FormField
             control={form.control}
             name="email"
