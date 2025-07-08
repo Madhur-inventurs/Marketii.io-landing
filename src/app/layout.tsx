@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Marketti.io: All-in-One AI-Powered CRM',
   description: 'Sales, HR, Finance, Projects, Support, and Digital Marketing—All in one place.',
   icons: {
-    icon: '/public/Marketti.png'
+    icon: '../assets/Marketti.png'
   }
 };
 
