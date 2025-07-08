@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import './globals.css';
-import './icons.css'
+// import './icons.css'
 import { Toaster } from "@/components/ui/toaster"
 
 
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Marketti.io: All-in-One AI-Powered CRM',
   description: 'Sales, HR, Finance, Projects, Support, and Digital Marketing—All in one place.',
   icons: {
-    icon: '../assets/Marketti.png'
+    icon: '/Public/Marketti.png'
   }
 };
 
